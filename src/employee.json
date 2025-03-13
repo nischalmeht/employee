@@ -1,0 +1,70 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "jobTitle": "Software Engineer",
+      "department": 3,
+      "salary": 75000,
+      "hireDate": "2020-01-15",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "jobTitle": "Product Manager",
+      "department": 3,
+      "salary": 85000,
+      "hireDate": "2019-03-22",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "firstName": "Emily",
+      "lastName": "Davis",
+      "email": "emily.davis@example.com",
+      "jobTitle": "Technical Specialist",
+      "department": 2,
+      "salary": 55000,
+      "hireDate": "2018-11-30",
+      "isActive": false
+    },
+    {
+      "id": "5",
+      "firstName": "William",
+      "lastName": "Brown",
+      "email": "william.brown@example.com",
+      "jobTitle": "Data Analyst",
+      "department": 4,
+      "salary": 7200,
+      "hireDate": "2022-04-05",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "firstName": "manas",
+      "lastName": "Mehta",
+      "email": "manas@gmail.com",
+      "jobTitle": "software developer",
+      "department": "2",
+      "hireDate": "2222-02-12",
+      "salary": 2222,
+      "status": "active"
+    },
+    {
+      "id": "8",
+      "firstName": "Nischal",
+      "lastName": "Mehta",
+      "email": "nish.mehta10@gmail.com",
+      "jobTitle": "Data Analyst",
+      "department": "3",
+      "hireDate": "2222-02-01",
+      "salary": 223,
+      "status": "active"
+    }
+  ]
+}

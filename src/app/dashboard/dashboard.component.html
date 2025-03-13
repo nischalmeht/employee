@@ -1,0 +1,99 @@
+
+ 
+
+  <div class="container ">
+    
+    <mat-card>
+     
+      <!-- <form [formGroup]="searchForm">
+
+      </form> -->
+      
+    
+    <div class="row mt-3 px-3">
+      <div class="col-md-4">
+        <mat-form-field class="w-100">
+          <mat-label>Search Employees</mat-label>
+          <input matInput  placeholder="Search FirstName" [formControl]="firstNameControl" (ngModelChange)="onSearchFirstName($event)"  />
+        </mat-form-field>          
+      </div>
+      <div class="col-md-4">
+        <mat-form-field class="w-100">
+          <mat-label>Search Job Tittle</mat-label>
+          <input matInput  placeholder="Search Job Tittle"  [formControl]="jobTitleControl"  />
+        </mat-form-field>         
+      </div>
+      <div class="col-md-4">
+        <mat-form-field class="w-100">
+          <mat-label>Search Department</mat-label>
+          <input matInput  placeholder="Search Department"  [formControl]="departmentControl" />
+        </mat-form-field>          
+      </div>
+    </div>
+    
+      <mat-card-content class="overflow-auto">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef>First Name</th>
+            <td mat-cell *matCellDef="let element">{{ element && element.firstName ? element.firstName:"NA" }}</td>
+          </ng-container>
+          <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef>Last Name</th>
+            <td mat-cell *matCellDef="let element">{{ element && element.lastName ? element.lastName:"NA" }}</td>
+          </ng-container>
+  
+          
+  
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let element">{{ element && element.email ? element.email:"NA" }}</td>
+          </ng-container>
+          <ng-container matColumnDef="jobTitle">
+            <th mat-header-cell *matHeaderCellDef>Job Tittle</th>
+            <td mat-cell *matCellDef="let element">{{ element && element.jobTitle ? element.jobTitle:"NA" }}</td>
+          </ng-container>
+          <ng-container matColumnDef="department">
+            <th mat-header-cell *matHeaderCellDef>Department</th>
+            <td mat-cell *matCellDef="let element">{{ element && element.department ? departmentMap[element.department] : 'NA' }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="hireDate">
+            <th mat-header-cell *matHeaderCellDef>HireDate</th>
+            <td mat-cell *matCellDef="let element">{{ element && element.hireDate ? element.hireDate:"NA" }}</td>
+          </ng-container>
+          <ng-container matColumnDef="salary">
+            <th mat-header-cell *matHeaderCellDef>Salary</th>
+            <td mat-cell *matCellDef="let element">{{ element && element.salary ? element.salary:"NA" }}</td>
+          </ng-container>
+          <ng-container matColumnDef="isActive">
+            <th mat-header-cell *matHeaderCellDef>isActive</th>
+            <td mat-cell *matCellDef="let element">{{ element && element.isActive ? element.isActive:"NA" }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button (click)="editEmployee(element.id)">
+                <mat-icon >edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="deleteEmployeeData(element.id)" >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+    <div class="d-flex justify-content-end gap-2 mt-3" >
+      <button (click)="prevPage()" class="btn btn-primary px-4" [disabled]="start === 0">
+        <i class="bi bi-arrow-left"></i> Previous
+      </button>
+      <button (click)="nextPage()" class="btn btn-primary px-4" [disabled]="isNextDisabled">
+        Next <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+  

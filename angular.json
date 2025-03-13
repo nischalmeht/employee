@@ -17,7 +17,8 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -27,14 +28,13 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "ssr": false, 
+            "prerender": false 
           },
           "configurations": {
             "production": {
@@ -62,6 +62,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4200
+          },
           "configurations": {
             "production": {
               "buildTarget": "employee:build:production"
@@ -80,7 +83,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
@@ -90,6 +94,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -97,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "76bb27ed-9414-4853-98e5-7c6b072bad7b"
   }
 }
